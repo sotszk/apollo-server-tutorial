@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import { size } from 'polished';
 
 import { unit, colors } from '../styles';
@@ -23,7 +23,10 @@ interface HeaderProps {
   children?: any;
 }
 
-const Header: React.FC<HeaderProps> = ({ image, children = 'Space Explorer' }) => {
+const Header: React.FC<HeaderProps> = ({
+  image,
+  children = 'Space Explorer',
+}) => {
   const email = atob(localStorage.getItem('token') as string);
   const avatar = image || pickAvatarByEmail(email);
 
@@ -36,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ image, children = 'Space Explorer' }) =
       </div>
     </Container>
   );
-}
+};
 
 export default Header;
 

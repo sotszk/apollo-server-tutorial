@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import styled, { css } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 import { size } from 'polished';
 
 import Button from './button';
@@ -17,12 +18,15 @@ interface LoginFormState {
   email: string;
 }
 
-export default class LoginForm extends Component<LoginFormProps, LoginFormState> {
+export default class LoginForm extends Component<
+  LoginFormProps,
+  LoginFormState
+> {
   state = { email: '' };
 
   onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const email = (event.target as HTMLInputElement).value;
-    this.setState(s => ({ email }));
+    this.setState((s) => ({ email }));
   };
 
   onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
